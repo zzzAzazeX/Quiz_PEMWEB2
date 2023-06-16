@@ -25,6 +25,10 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
+        ],[
+            'name.required'=> 'Nama Tidak Boleh Kosong',
+            'price.required'=> 'Harga Tidak Boleh Kosong',
+            'stock.required'=> 'Stock Tidak Boleh Kosong',
         ]);
 
         $product = Product::create($validatedData);
@@ -50,6 +54,10 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
+        ],[
+                'name.required'=> 'Nama Tidak Boleh Kosong',
+                'price.required'=> 'Harga Tidak Boleh Kosong',
+                'stock.required'=> 'Stock Tidak Boleh Kosong',
         ]);
 
         $product = Product::findOrFail($id);
