@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Tambah Produk</h1>
+    <h1 class="display-4 text-center mb-4">Tambah Produk</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">

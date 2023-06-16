@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 align="center">Produk EZ Store</h1>
+    <h1 class="display-4 text-center mb-4">Produk EZ Store</h1>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-
-    <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Tambah Product</a>
-    <a href="{{ route('products.available') }}" class="btn btn-success mb-3">Available Stock</a>
-    <a href="{{ route('products.unavailable') }}" class="btn btn-danger mb-3">Unavailable Stock</a>
-
-    <table class="table">
+    <a href="{{ route('products.index') }}" class="btn btn-light mb-3" ><b>Home</b></a>
+    <a href="{{ route('products.create') }}" class="btn btn-light mb-3" ><b>Tambah Product</b></a>
+    <a href="{{ route('products.available') }}" class="btn btn-light mb-3"><b>Available Stock</b></a>
+    <a href="{{ route('products.unavailable') }}" class="btn btn-light mb-3"><b>Unavailable Stock</b></a>
+    <table class="table table-dark table-hover">
         <thead>
             <tr>
                 <th>ID</th>
@@ -30,8 +29,8 @@
                     <td>{{ $product->stock }}</td>
                     <td>
                         <a href="{{ route('products.show', $product->id) }}" class="btn btn-info btn-sm">View</a>
-                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">Edit</a>
                         <a href="{{ route('products.updateStockForm', ['id' => $product->id]) }}" class="btn btn-success btn-sm">Update Stock</a>
+                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')

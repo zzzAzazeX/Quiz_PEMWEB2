@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <style>
         body {
-            background-color: #116466;
-            color: #2C3531;
+            background-color: #376E6F;
             padding-top: 20px;
         }
     </style>
